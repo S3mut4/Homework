@@ -45,7 +45,7 @@ console.log(fullName);
 // Definition 6.1 ("18" string vs 18 number)
 let userAgeString: any = "18";
 let targetAgeNumber: number = 18;
-let isStrictAgeEqual: boolean = userAgeString === targetAgeNumber; // false: different types (string vs number)
+let isStrictAgeEqual: boolean = userAgeString === targetAgeNumber;    // false: different types (string vs number)
 let isStrictAgeNotEqual: boolean = userAgeString !== targetAgeNumber; // true
 
 // Definition 6.2 (true boolean vs "true" string)
@@ -57,13 +57,13 @@ let isStrictActiveEqual: boolean = isActiveBool === isActiveStr; // false: boole
 let pass1: string = "QA2026";
 let pass2: string = "QA2026";
 let pass3: string = "qa2026";
-let isPassEqual: boolean = pass1 === pass2; // true: identical content & type
+let isPassEqual: boolean = pass1 === pass2;     // true: identical content & type
 let isPassCaseEqual: boolean = pass1 === pass3; // false: JS string comparison is case-sensitive
 
 // Definition 6.4 (20 vs 20)
 let price1: number = 20;
 let price2: number = 20;
-let isPriceEqual: boolean = price1 === price2; // true: same value and type
+let isPriceEqual: boolean = price1 === price2;    // true: same value and type
 let isPriceNotEqual: boolean = price1 !== price2; // false: === and !== always yield opposite boolean values
 
 // Result
