@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////
-//#Create new proyect
+//#Create new project
 //npm init -y          #Default Node package.json options
 //npx tsc --init.      #Default TypeScript.json options
 //
