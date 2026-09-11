@@ -19,7 +19,7 @@ let length :number = 4;
 let width :number = 3;
 let area :number = length * width;
 
-// Result
+// Verification
 console.log(area);
 
 // --- Task 2: Calculate Body Mass Index (BMI) ---
@@ -28,7 +28,7 @@ let weight :number = 70;   // in kg
 let height :number = 1.75; // in meters
 let bmi :number = weight / (height * height);
 
-// Result
+// Verification
 console.log(bmi);
 
 // --- Task 3: Temperature Converter ---
@@ -36,7 +36,7 @@ console.log(bmi);
 let celsius :number = 25;                        // ºC
 let fahrenheit :number = (9 / 5) * celsius + 32; //Conversion to ºF
 
-// Result
+// Verification
 console.log(celsius +'ºC is equal to '+ fahrenheit +'ºF');
 
 // --- Task 4: Age Check with Boolean ---
@@ -44,7 +44,7 @@ console.log(celsius +'ºC is equal to '+ fahrenheit +'ºF');
 let age :number = 20;
 let isAdult :boolean = age >= 18;
 
-// Result
+// Verification
 console.log('Can he goes to the party?'+ isAdult);
 
 // --- Task 5: String Concatenation ---
@@ -53,7 +53,7 @@ let firstName :string = "Hello";
 let lastName :string = "World";
 let fullName :string = firstName + " " + lastName;
 
-// Result
+// Verification
 console.log(fullName);
 
 // --- Task 6: Age Check with Strict Equality ---
@@ -81,7 +81,7 @@ let price2 :number = 20;
 let isPriceEqual :boolean = price1 === price2;    // true: same value and type
 let isPriceNotEqual :boolean = price1 !== price2; // false: === and !== always yield opposite boolean values
 
-// Result
+// Verification
 console.log("6.1:", isStrictAgeEqual, isStrictAgeNotEqual);
 console.log("6.2:", isStrictActiveEqual);
 console.log("6.3:", isPassEqual, isPassCaseEqual);
@@ -103,7 +103,7 @@ console.log("Strict (===):", isEqualStrict);
 let originalText :string = "42";
 let convertedNumber :number = Number(originalText);
 
-// Result
+// Verification
 console.log("Original String:", originalText);
 console.log("Converted Number:", convertedNumber);
 
@@ -113,7 +113,7 @@ console.log("Converted Number:", convertedNumber);
 let originalNum9 :number = 100;
 let convertedStr :string = String(originalNum9);
 
-// Result
+// Verification
 console.log("Original Number:", originalNum9, typeof originalNum9);   // output: 100 "number"
 console.log("Converted String:", convertedStr, typeof convertedStr); // output: "100" "string"
 
@@ -124,6 +124,6 @@ console.log("Converted String:", convertedStr, typeof convertedStr); // output: 
 let originalNum10 :number = 100;
 let castedStr :string = originalNum10 as unknown as string;
 
-// Result
+// Verification
 console.log("Original Number:", originalNum10, typeof originalNum10); // output: 100 "number"
 console.log("Casted String:", castedStr, typeof castedStr);           // output: 100 "number" (still a number at runtime!)
