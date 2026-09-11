@@ -1,15 +1,15 @@
 // --- Task 1: Temperature Converter ---
-function convertToFahrenheit(celsius :number) :number {
+export function convertToFahrenheit(celsius :number) :number {
     return (celsius * 9 / 5) + 32;
 }
 
 // --- Task 2: Greeting Generator ---
-function greetUser(firstName :string, lastName :string) :string {
+export function greetUser(firstName :string, lastName :string) :string {
     return `Hello, ${firstName} ${lastName}!`;
 }
 
 // --- Task 3: Rectangle Area Calculator ---
-function calculateArea(width :number, height :number) :number {
+export function calculateArea(width :number, height :number) :number {
     return width * height;
 }
 
