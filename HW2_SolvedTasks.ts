@@ -45,7 +45,7 @@ let age :number = 20;
 let isAdult :boolean = age >= 18;
 
 // Verification
-console.log('Can he goes to the party?'+ isAdult);
+console.log('Can he go to the party?'+ isAdult);
 
 // --- Task 5: String Concatenation ---
 // Definition
