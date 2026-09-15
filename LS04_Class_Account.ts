@@ -75,8 +75,8 @@ export class Account {
 }
 
 // --- Test Execution Minor/Adult---
-const minorAccount = new Account('Carlos', 'xxxx', 'dan@gmail.com', 4, 0, 'Carl01')
-const adultAccount = new Account('Daniel', 'yyyy', 'carl@gmail.com', 48, 0, 'Dan01')
+const minorAccount = new Account('Carlos', 'xxxx', 'dan@xxx.com', 4, 0, 'Carl01')
+const adultAccount = new Account('Daniel', 'yyyy', 'carl@xxx.com', 48, 0, 'Dan01')
 
 //Some money
 let paydayMinor: number = minorAccount.topUpWithInfo(100)
