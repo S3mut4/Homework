@@ -81,7 +81,7 @@ const adultAccount = new Account('Daniel', 'yyyy', 'carl@xxx.com', 48, 0, 'Dan01
 //Some money
 let paydayMinor: number = minorAccount.topUpWithInfo(100)
 let paydayAdult: number = adultAccount.topUpWithInfo(1000)
-console.log('Balance after topUp (' + paydayAdult + '):', adultAccount.currentBalance)
+
 // 1. Minor Account
 console.log('\n--- Minor Account Test ---')
 console.log('Balance after payday ('+paydayMinor+'):', minorAccount.currentBalance)
