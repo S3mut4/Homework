@@ -48,4 +48,4 @@ console.log(myInvoice.markAsPaid())
 
 myInvoice.changeAmount(99_999_999_999)
 console.log(Number.MAX_SAFE_INTEGER)
-console.log("New Invoice amount:", myInvoice.amount)
+console.log("New Invoice amount (V2 following the Balance-Driven pattern in the oven):", myInvoice.amount)
