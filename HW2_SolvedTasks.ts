@@ -58,15 +58,18 @@ console.log(fullName);
 
 // --- Task 6: Age Check with Strict Equality ---
 // Definition 6.1 ("18" string vs 18 number)
-let userAgeString :any = "18";
+//let userAgeString :any = "18"; ** Using any is not a good practice because it disables TypeScript's type checking.
+let userAgeString :string = "18";
 let targetAgeNumber :number = 18;
-let isStrictAgeEqual :boolean = userAgeString === targetAgeNumber;    // false: different types (string vs number)
-let isStrictAgeNotEqual :boolean = userAgeString !== targetAgeNumber; // true
+// Bypassing TS overlap check to demonstrate runtime behavior:
+let isStrictAgeEqual :boolean = (userAgeString as unknown) === targetAgeNumber;    // false
+let isStrictAgeNotEqual :boolean = (userAgeString as unknown) !== targetAgeNumber; // true
 
 // Definition 6.2 (true boolean vs "true" string)
 let isActiveBool :boolean = true;
-let isActiveStr :any = "true";
-let isStrictActiveEqual :boolean = isActiveBool === isActiveStr; // false: boolean vs string
+//let isActiveStr :any = "true"; ** Using any is not a good practice because it disables TypeScript's type checking.
+let isActiveStr :string = "true";
+let isStrictActiveEqual :boolean = (isActiveBool as unknown) === isActiveStr; // false
 
 // Definition 6.3 (Case sensitivity comparison)
 let pass1 :string = "QA2026";
@@ -89,10 +92,11 @@ console.log("6.4:", isPriceEqual, isPriceNotEqual);
 
 // --- Task 7: Strict Equality with Different Types ---
 // Definition
-let userInput :any = '18';
+//let userInput :any = '18'; ** Using any is not a good practice because it disables TypeScript's type checking.
+let userInput :string = '18';
 let actualAge :number = 18;
-let isEqualLoose :boolean = userInput == actualAge;   // true: == converts types before comparing ('18' -> 18)
-let isEqualStrict :boolean = userInput === actualAge; // false: === checks value AND type (string vs number)
+let isEqualLoose :boolean = (userInput as unknown) == actualAge;   // true: == converts types before comparing ('18' -> 18)
+let isEqualStrict :boolean = (userInput as unknown) === actualAge; // false: === checks value AND type (string vs number)
 
 // Result
 console.log("Loose (==):", isEqualLoose);
