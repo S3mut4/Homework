@@ -1,51 +1,75 @@
 // Class Definition
+// An invoice is an immutable commercial document issued by a seller to a buyer
+// Status: Draft --> Pending --> Paid
+
 class Invoice {
     invoiceNumber: string
     clientName: string
     amount: number
     status: string
 
-    constructor(invoiceNumber: string, clientName: string, amount: number, status: string) {
+    constructor(invoiceNumber: string, clientName: string, amount: number, status: string = "Draft") {
         this.invoiceNumber = invoiceNumber
         this.clientName = clientName
         this.amount = amount
         this.status = status
     }
 
+    markAsPending(): string | void {
+        if (this.status !== "Draft") {
+            return 'Cannot mark as pending: invoice is already in '+ this.status +' status.'
+        }
+        this.status = "Pending"
+    }
+
     markAsPaid(): string | void {
         if (this.status === "Paid") {
             return "This invoice has already been paid."
         }
+        if (this.status !== "Pending") {
+            return `Cannot mark as paid: invoice must be in 'Pending' status first.`
+        }
         this.status = "Paid"
     }
 
-    changeAmount(newAmount: number): void {
+    changeAmount(newAmount: number): string | void {
+        if (this.status !== "Draft") {
+            return 'Cannot change amount: invoice is immutable once issued (current status: '+this.status+').'
+        }
         this.amount = newAmount
     }
 }
 
 // Verification
 
-// 1. Invoice instance pending for Yutani Corp with a big number
-const myInvoice = new Invoice("WY-2179", "Yutani Corp", 42_000_000_000, "Pending")
-console.log("Initial status:", myInvoice.status)
+// 1. Invoice instance created as Draft for Yutani Corp with BigInt
+const myInvoice = new Invoice("WY-2179", "Yutani Corp", 42_000_000_000, "Draft")
+console.log("Initial status:", myInvoice.status) // "Draft"
 
-// 2. Invoice to paid through markAsPaid()
+// Draft amount can be modified freely
+myInvoice.changeAmount(50_000_000_000)
+console.log("Updated Draft amount:", myInvoice.amount) // 50000000000
+
+// 2. Issue invoice to Pending status
+myInvoice.markAsPending()
+console.log("Current status:", myInvoice.status) // "Pending"
+
+// Attempting to change amount on a Pending invoice fails
+console.log(myInvoice.changeAmount(99_999_999_999))
+// Output: "Cannot change amount: invoice is immutable once issued (current status: 'Pending')."
+
+// 3. Mark invoice as Paid
 myInvoice.markAsPaid()
-console.log("Current status:", myInvoice.status)
+console.log("Current status:", myInvoice.status) // "Paid"
 
-// 3. Again markAsPaid() to get the already paid notice
+// Attempting to change amount on a Paid invoice fails
+console.log(myInvoice.changeAmount(99_999_999_999))
+// Output: "Cannot change amount: invoice is immutable once issued (current status: 'Paid')."
+
+// 4. Again markAsPaid() to get the already paid notice
 console.log(myInvoice.markAsPaid())
+// Output: "This invoice has already been paid."
 
-// 4. changeAmount() to change Invoice amount to an even larger number
-
-// Handling large numbers cleanly:
-// 1. Numeric Separator (_): A visual separator to make large numbers easier to read (e.g., 42_000_000_000).
-// JavaScript ignores the underscores completely at runtime, treating it as 42000000000.
-
-// 2. BigInt Literal (n): The n suffix explicitly creates a bigint type instead of a standard number (e.g., 42000000000n).
-// Use this when working with integers exceeding $9,007,199,254,740,991$ (Number.MAX_SAFE_INTEGER) to avoid precision loss.
-
-myInvoice.changeAmount(99_999_999_999)
-console.log(Number.MAX_SAFE_INTEGER)
-console.log("New Invoice amount (V2 following the Balance-Driven pattern in the oven):", myInvoice.amount)
+// References & Safety checks
+console.log("Max safe normal integer reference:", Number.MAX_SAFE_INTEGER)
+console.log("Final untouched Invoice amount:", myInvoice.amount) // 50000000000
