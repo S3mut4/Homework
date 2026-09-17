@@ -125,6 +125,19 @@ console.log("Converted String:", convertedStr, typeof convertedStr); // output: 
 // Definition
 // Type assertion (cast): Tricks TypeScript compiler to treat it as string, but DOES NOT change the JS runtime value.
 // In PL/SQL, it means a physical transformation. What use cases does this have?
+
+// Solved:
+// Type assertion ('as') is a compile-time concept in TypeScript. It tricks the compiler
+// to treat a value as a different type, but DOES NOT affect the JavaScript runtime value.
+//
+// Unlike PL/SQL where CAST() performs a physical byte transformation in memory,
+// TS assertions completely disappear after transpilation.
+//
+// Real-world Use Cases for 'as unknown as T':
+// 1. Silencing strict compiler checks (e.g., TS2367 non-overlapping type comparisons for tests/demos).
+// 2. DOM manipulation where the developer knows the specific element type (e.g., HTMLInputElement).
+// 3. Typing external API payloads or unvalidated inputs before assertion libraries run.
+
 let originalNum10 :number = 100;
 let castedStr :string = originalNum10 as unknown as string;
 
