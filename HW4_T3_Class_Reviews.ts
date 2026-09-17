@@ -1,3 +1,4 @@
+// Code provided, review code and solve errors
 // Class Definition
 class BankAccount {
     balance: number

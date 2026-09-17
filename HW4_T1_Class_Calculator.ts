@@ -5,6 +5,7 @@ class Calculator {
     }
 
     isGreater(num1: number, num2: number): boolean {
+        // Simplification: The relational operator (>) already returns a boolean (true/false).
         return num1 > num2
         //if (num1 > num2) {
         //    return true

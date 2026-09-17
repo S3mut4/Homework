@@ -6,8 +6,8 @@
 //
 //
 // google.github.io/styleguide/tsguide.html
-export class Account {
 
+export class Account {
     // 1. Fields
     username: string
     password: string
@@ -74,17 +74,17 @@ export class Account {
     }
 }
 
-// --- Test Execution Minor/Adult---
+// --- Test Execution Minor/Adult ---
 const minorAccount = new Account('Carlos', 'xxxx', 'dan@xxx.com', 4, 0, 'Carl01')
 const adultAccount = new Account('Daniel', 'yyyy', 'carl@xxx.com', 48, 0, 'Dan01')
 
-//Some money
+// Some money
 let paydayMinor: number = minorAccount.topUpWithInfo(100)
 let paydayAdult: number = adultAccount.topUpWithInfo(1000)
 
 // 1. Minor Account
 console.log('\n--- Minor Account Test ---')
-console.log('Balance after payday ('+paydayMinor+'):', minorAccount.currentBalance)
+console.log(`Balance after payday (${paydayMinor}):`, minorAccount.currentBalance)
 minorAccount.topUp(500)
 console.log('Balance after topUp (500):', minorAccount.currentBalance)
 let isPayoutSuccessful: boolean = minorAccount.payOut(100)
@@ -93,7 +93,7 @@ console.log('Balance after failed payout:', minorAccount.currentBalance)
 
 // 2. Adult Account
 console.log('\n--- Adult Account Test ---')
-console.log('Balance after payday ('+paydayAdult+'):', adultAccount.currentBalance)
+console.log(`Balance after payday (${paydayAdult}):`, adultAccount.currentBalance)
 adultAccount.topUp(500)
 console.log('Balance after topUp (500):', adultAccount.currentBalance)
 isPayoutSuccessful = adultAccount.payOut(100)
