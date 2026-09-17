@@ -38,15 +38,13 @@ console.log("Current status:", myInvoice.status)
 console.log(myInvoice.markAsPaid())
 
 // 4. changeAmount() to change Invoice amount to an even larger number
+
 // Handling large numbers cleanly:
 // 1. Numeric Separator (_): A visual separator to make large numbers easier to read (e.g., 42_000_000_000).
 // JavaScript ignores the underscores completely at runtime, treating it as 42000000000.
 
 // 2. BigInt Literal (n): The n suffix explicitly creates a bigint type instead of a standard number (e.g., 42000000000n).
 // Use this when working with integers exceeding $9,007,199,254,740,991$ (Number.MAX_SAFE_INTEGER) to avoid precision loss.
-//
-// Since both are native ECMAScript features, they require no compiler transformations and are 100%
-// compatible with strip-only mode.
 
 myInvoice.changeAmount(99_999_999_999)
 console.log(Number.MAX_SAFE_INTEGER)
