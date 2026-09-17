@@ -48,7 +48,7 @@ class Invoice {
 // 2. BigInt Literal (n): The n suffix explicitly creates a bigint type instead of a standard number (e.g., 42000000000n).
 // Use this when working with integers exceeding 9,007,199,254,740,991 (Number.MAX_SAFE_INTEGER) to avoid precision loss.
 
-// 1. Invoice instance created as Draft for Yutani Corp with BigInt
+// 1. Invoice instance created as Draft for Yutani Corp
 const myInvoice = new Invoice("WY-2179", "Yutani Corp", 42_000_000_000, "Draft")
 console.log("Initial status:", myInvoice.status) // "Draft"
 
