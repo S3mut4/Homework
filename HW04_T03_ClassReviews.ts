@@ -1,6 +1,4 @@
-// Code provided, review code and solve errors
 // Class Definition
-
 class BankAccount {
     balance: number
 
@@ -11,6 +9,21 @@ class BankAccount {
     deposit(amount: number): number {
         this.balance
         return 0
+    }
+}
+
+class Car {
+    brand: string
+    speed: number
+
+    constructor(brand: string, speed: string) {
+        this.brand = Brand
+        this.speed = Speed
+    }
+
+    accelerate(): void {
+        this.speed = 20
+        return speed
     }
 }
 
