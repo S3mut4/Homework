@@ -2,13 +2,13 @@
 class BankAccount {
     balance: number
 
-    constructor(initialAmount: string) {
-        balance = initialAmount
+    constructor(balance: number) {
+        this.balance = balance
     }
 
     deposit(amount: number): number {
-        this.balance
-        return 0
+        this.balance += amount
+        return this.balance
     }
 }
 
@@ -16,29 +16,14 @@ class Car {
     brand: string
     speed: number
 
-    constructor(brand: string, speed: string) {
-        this.brand = Brand
-        this.speed = Speed
+    constructor(brand: string, speed: number) {
+        this.brand = brand
+        this.speed = speed
     }
 
-    accelerate(): void {
-        this.speed = 20
-        return speed
-    }
-}
-
-class Car {
-    brand: string
-    speed: number
-
-    constructor(brand: string, speed: string) {
-        this.brand = Brand
-        this.speed = Speed
-    }
-
-    accelerate(): void {
-        this.speed = 20
-        return speed
+    accelerate(acceleration: number = 20): number {
+        this.speed += acceleration
+        return this.speed
     }
 }
 
@@ -46,17 +31,17 @@ class Person {
     name: string
     age: number
 
-    constructor(name: string, age: string) {
-        this.Name = name
+    constructor(name: string, age: number) {
+        this.name = name
         this.age = age
     }
 
     getName(): string {
-        return this.Name
+        return this.name
     }
 
     getAge(): number {
-        return age
+        return this.age
     }
 }
 
@@ -65,12 +50,12 @@ class Rectangle {
     height: number
 
     constructor(width: number, height: number) {
-        this.Width = width
-        this.Height = height
+        this.width = width
+        this.height = height
     }
 
     getArea(): number {
-        return width * height
+        return this.width * this.height
     }
 }
 
@@ -86,3 +71,5 @@ const john = new Person('John', 30)
 console.log(john.getName()) // After fixing: will print "John"
 console.log(john.getAge())  // After fixing: will print 30
 
+const rect = new Rectangle(5, 10)
+console.log(rect.getArea()) // After fixing: will print 50
