@@ -1,15 +1,16 @@
 // Code provided, review code and solve errors
 // Class Definition
+
 class BankAccount {
     balance: number
 
-    constructor(initialAmount: number) {
-        this.balance = initialAmount
+    constructor(initialAmount: string) {
+        balance = initialAmount
     }
 
     deposit(amount: number): number {
-        this.balance += amount
-        return this.balance
+        this.balance
+        return 0
     }
 }
 
@@ -17,14 +18,14 @@ class Car {
     brand: string
     speed: number
 
-    constructor(brand: string, speed: number) {
-        this.brand = brand
-        this.speed = speed
+    constructor(brand: string, speed: string) {
+        this.brand = Brand
+        this.speed = Speed
     }
 
-    accelerate(): number {
-        this.speed += 20
-        return this.speed
+    accelerate(): void {
+        this.speed = 20
+        return speed
     }
 }
 
@@ -32,17 +33,17 @@ class Person {
     name: string
     age: number
 
-    constructor(name: string, age: number) {
-        this.name = name
+    constructor(name: string, age: string) {
+        this.Name = name
         this.age = age
     }
 
     getName(): string {
-        return this.name
+        return this.Name
     }
 
     getAge(): number {
-        return this.age
+        return age
     }
 }
 
@@ -51,16 +52,19 @@ class Rectangle {
     height: number
 
     constructor(width: number, height: number) {
-        this.width = width
-        this.height = height
+        this.Width = width
+        this.Height = height
     }
 
     getArea(): number {
-        return this.width * this.height
+        return width * height
     }
 }
 
 // Verification
+
+const myAccount = new BankAccount(500)
+console.log(myAccount.deposit(100)) // After fixing: will print 600
 
 const car = new Car('Toyota', 100)
 console.log(car.accelerate()) // After fixing: will print 120
@@ -68,9 +72,6 @@ console.log(car.accelerate()) // After fixing: will print 120
 const john = new Person('John', 30)
 console.log(john.getName()) // After fixing: will print "John"
 console.log(john.getAge())  // After fixing: will print 30
-
-const myAccount = new BankAccount(500)
-console.log(myAccount.deposit(100)) // After fixing: will print 600
 
 const rect = new Rectangle(5, 10)
 console.log(rect.getArea()) // After fixing: will print 50
